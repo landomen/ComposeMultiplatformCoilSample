@@ -3,8 +3,10 @@ package com.landomen.composemultiplatform.coil.ui
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,15 +16,21 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 import com.landomen.composemultiplatform.coil.model.Article
+import composemultiplatformcoilsample.composeapp.generated.resources.Res
+import composemultiplatformcoilsample.composeapp.generated.resources.locally_loaded_image_title
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.format
 import kotlinx.datetime.format.char
 import kotlinx.datetime.toLocalDateTime
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 internal fun ArticleListScreen() {
@@ -80,6 +88,11 @@ private fun ArticleListContent(
                 article = article,
             )
         }
+
+        item {
+            Spacer(Modifier.height(32.dp))
+            LocallyLoadedImage()
+        }
     }
 }
 
@@ -94,6 +107,14 @@ private fun ArticleItem(
             verticalArrangement = Arrangement.spacedBy(8.dp),
             modifier = Modifier.fillMaxSize().padding(16.dp)
         ) {
+            AsyncImage(
+                model = article.imageUrl,
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+            )
+
             Text(
                 text = article.title,
                 style = MaterialTheme.typography.titleMedium,
@@ -126,5 +147,21 @@ private fun ArticleItem(
                 style = MaterialTheme.typography.bodySmall,
             )
         }
+    }
+}
+
+@Composable
+private fun LocallyLoadedImage() {
+    Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(
+            stringResource(Res.string.locally_loaded_image_title),
+            style = MaterialTheme.typography.titleMedium
+        )
+
+        @OptIn(ExperimentalResourceApi::class)
+        AsyncImage(
+            model = Res.getUri("drawable/pexels-pixabay-2166.jpg"),
+            contentDescription = stringResource(Res.string.locally_loaded_image_title),
+        )
     }
 }
