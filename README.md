@@ -1,21 +1,13 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop.
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
-
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+# Compose Multiplatform Coil Sample
 
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+This is a simple https://kotlinlang.org/docs/multiplatform.html project that uses [Compose Multiplatform](https://www.jetbrains.com/compose-multiplatform/) framework to share UI across Android, iOS, Desktop, and Web. It showcases how to add and use the [Coil](https://github.com/coil-kt/coil) image loading library in a KMP project. It also integrates [Ktor engine](https://ktor.io/docs/client-engines.html) that is required by Coil to be able to load images from a remote source.
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [GitHub](https://github.com/JetBrains/compose-multiplatform/issues).
 
-You can open the web application by running the `:composeApp:wasmJsBrowserDevelopmentRun` Gradle task.
+This is a companion sample to my article on integrating Coil in Compose Multiplatform: https://medium.com/@domen.lanisnik/loading-images-with-coil-in-compose-multiplatform-4c94e16a06d7
+
+
+<img src="/screenshots/coil_combined_result_small.png" />
+
+<img src="/screenshots/coil_local_combined_small.png" />
