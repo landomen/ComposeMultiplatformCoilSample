@@ -1,4 +1,4 @@
-package com.landomen.composemultiplatform.coin
+package com.landomen.composemultiplatform.coil
 
 import androidx.compose.ui.window.ComposeUIViewController
 

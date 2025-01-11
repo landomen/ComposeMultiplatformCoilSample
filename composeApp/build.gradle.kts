@@ -78,11 +78,11 @@ kotlin {
 }
 
 android {
-    namespace = "com.landomen.composemultiplatform.coin"
+    namespace = "com.landomen.composemultiplatform.coil"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "com.landomen.composemultiplatform.coin"
+        applicationId = "com.landomen.composemultiplatform.coil"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
@@ -110,11 +110,11 @@ dependencies {
 
 compose.desktop {
     application {
-        mainClass = "com.landomen.composemultiplatform.coin.MainKt"
+        mainClass = "com.landomen.composemultiplatform.coil.MainKt"
 
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.landomen.composemultiplatform.coin"
+            packageName = "com.landomen.composemultiplatform.coil"
             packageVersion = "1.0.0"
         }
     }

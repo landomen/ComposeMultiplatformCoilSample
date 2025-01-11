@@ -1,4 +1,4 @@
-package com.landomen.composemultiplatform.coin
+package com.landomen.composemultiplatform.coil
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

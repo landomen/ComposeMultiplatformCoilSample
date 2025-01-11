@@ -1,4 +1,4 @@
-package com.landomen.composemultiplatform.coin.ui
+package com.landomen.composemultiplatform.coil.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -16,7 +16,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.landomen.composemultiplatform.coin.model.Article
+import com.landomen.composemultiplatform.coil.model.Article
 import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone

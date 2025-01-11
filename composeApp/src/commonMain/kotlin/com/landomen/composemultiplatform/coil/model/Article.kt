@@ -1,4 +1,4 @@
-package com.landomen.composemultiplatform.coin.model
+package com.landomen.composemultiplatform.coil.model
 
 import kotlinx.datetime.Instant
 

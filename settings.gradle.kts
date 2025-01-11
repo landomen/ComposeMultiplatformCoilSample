@@ -1,4 +1,4 @@
-rootProject.name = "ComposeMultiplatformCoinSample"
+rootProject.name = "ComposeMultiplatformCoilSample"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
